@@ -1,0 +1,3 @@
+- article→見た目の動き
+- module→機能面(parseなど)
+- vendor→外部のソースコード(全てnpmで済む場合は不要)
