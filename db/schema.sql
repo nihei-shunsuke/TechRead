@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS comments (
 
 CREATE TABLE IF NOT EXISTS chapters (
   chapter_id      INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,
+  chapter_num     INTEGER  NOT NULL,
   event_id        INTEGER  NOT NULL,
   event_date      DATETIME NOT NULL DEFAULT '',
   content         TEXT     NOT NULL DEFAULT '',

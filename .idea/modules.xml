@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/TechRead.iml" filepath="$PROJECT_DIR$/.idea/TechRead.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../go-stations/.idea/go-stations.iml" filepath="$PROJECT_DIR$/../go-stations/.idea/go-stations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../myapi/.idea/myapi.iml" filepath="$PROJECT_DIR$/../myapi/.idea/myapi.iml" />
+    </modules>
+  </component>
+</project>
