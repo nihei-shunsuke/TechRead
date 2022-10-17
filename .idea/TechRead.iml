@@ -7,5 +7,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="go-stations" />
     <orderEntry type="module" module-name="myapi" />
+    <orderEntry type="module" module-name="go-tech-blog" />
   </component>
 </module>

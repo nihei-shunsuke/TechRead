@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/TechRead.iml" filepath="$PROJECT_DIR$/.idea/TechRead.iml" />
       <module fileurl="file://$PROJECT_DIR$/../go-stations/.idea/go-stations.iml" filepath="$PROJECT_DIR$/../go-stations/.idea/go-stations.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/go-tech-blog/.idea/go-tech-blog.iml" filepath="$USER_HOME$/Downloads/go-tech-blog/.idea/go-tech-blog.iml" />
       <module fileurl="file://$PROJECT_DIR$/../myapi/.idea/myapi.iml" filepath="$PROJECT_DIR$/../myapi/.idea/myapi.iml" />
     </modules>
   </component>
