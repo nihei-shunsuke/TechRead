@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0b1a76e6-e423-4751-a450-ecf39c65f665" name="変更" comment="">
+      <change afterPath="$USER_HOME$/SourceCode/Coding-Tests/2022 summer-intern/main2.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../go-stations/library.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myapi/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myapi/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myapi/handlers/handlers.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myapi/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myapi/models/data.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myapi/models/models.go" afterDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Cave/README.md" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Cave/img/松明1.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Cave/img/松明2.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Cave/img/松明3.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Cave/img/松明4.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Cave/img/松明5.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Bestdeployment.go" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Bestdeployment.txt" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Bestdeployment1.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Bestdeployment2.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Bestdeployment3.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Evaluation.go" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Evaluation.txt" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Reversi.go" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Reversi1.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Reversi2.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/a.go" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/test" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/test10.txt" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/test12.txt" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/test27.txt" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/test30.txt" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/README.md" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/1.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/10.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/11.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/12.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/13.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/2.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/3.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/4.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/5.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/6.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/7.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/8.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/9.png" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/main.go" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/restaurant1.go" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/restaurant2.go" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/restaurant_step1.go" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/restaurant_step2.go" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/restaurant_step3.go" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/restaurant_step4.go" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/step1.txt" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/step2.txt" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/step3.txt" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/step4.txt" beforeDir="false" />
+      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/yahoo/furniture.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TechRead.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TechRead.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-stations/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../go-stations/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-stations/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../go-stations/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-stations/handler/todo.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-stations/handler/todo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-stations/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-stations/main.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///opt/homebrew/Cellar/go/1.19/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2FI9w8sTl9tZ8WKev5AzYoGR4i6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.vendoring.notification.had.been.shown&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/a/go/src/TechRead&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../myapi" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="アプリケーションレベル" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>
