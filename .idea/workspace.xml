@@ -5,70 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b1a76e6-e423-4751-a450-ecf39c65f665" name="変更" comment="">
-      <change afterPath="$USER_HOME$/SourceCode/Coding-Tests/2022 summer-intern/main2.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../go-stations/library.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../myapi/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../myapi/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../myapi/handlers/handlers.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../myapi/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../myapi/models/data.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../myapi/models/models.go" afterDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Cave/README.md" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Cave/img/松明1.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Cave/img/松明2.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Cave/img/松明3.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Cave/img/松明4.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Cave/img/松明5.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Bestdeployment.go" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Bestdeployment.txt" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Bestdeployment1.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Bestdeployment2.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Bestdeployment3.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Evaluation.go" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Evaluation.txt" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Reversi.go" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Reversi1.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/Reversi2.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/a.go" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/test" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/test10.txt" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/test12.txt" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/test27.txt" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/MoneyFoward/test30.txt" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/README.md" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/1.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/10.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/11.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/12.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/13.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/2.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/3.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/4.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/5.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/6.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/7.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/8.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/img/9.png" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/main.go" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/restaurant1.go" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/restaurant2.go" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/restaurant_step1.go" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/restaurant_step2.go" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/restaurant_step3.go" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/restaurant_step4.go" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/step1.txt" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/step2.txt" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/step3.txt" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/Restaurant/step4.txt" beforeDir="false" />
-      <change beforePath="$USER_HOME$/SourceCode/Coding-Tests/yahoo/furniture.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TechRead.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TechRead.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-stations/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../go-stations/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-stations/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../go-stations/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-stations/handler/todo.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-stations/handler/todo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-stations/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-stations/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +23,10 @@
   </component>
   <component name="GOROOT" url="file:///opt/homebrew/Cellar/go/1.19/libexec" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="true" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -122,6 +64,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/../myapi" />
     </key>
   </component>
@@ -141,6 +84,7 @@
     </option>
   </component>
   <component name="VgoProject">
+    <integration-enabled>false</integration-enabled>
     <settings-migrated>true</settings-migrated>
   </component>
 </project>

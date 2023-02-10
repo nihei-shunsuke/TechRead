@@ -7,7 +7,9 @@
 |  エンドポイント  |ハンドラ|  メソッド  | 説明 |
 | ---- | ---- |---- | ---- |
 |  /login | LoginHandler |  POST  |ログイン機能|
-|  /sign-up| SignUpHandler |  POST  |サインアップ機能|
+|  /sign-up | SignUpHandler |  POST  | サインアップ機能 |
+|  /mypage | FetchProfileHandler |  GET  | 自分のプロフィール情報取得 |
+|  /edit-profile | EditProfileHandler |  POST  | 自分のプロフィール更新 |
 |  /create-event | CreateEventHandler |  POST  |イベント作成機能 |
 |  /edit-event | EditEventHandler |  POST  |イベント編集機能|
 |  /event-list  | EventListHandler |  GET  |イベント一覧取得|
