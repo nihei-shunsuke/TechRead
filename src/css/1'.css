@@ -13,7 +13,7 @@ body {
   font: 400 87.5%/1.5em 'Open Sans', sans-serif;
 }
 
-.sin{
+.title{
   display: block;
   width: 20%;
   height: auto;
@@ -60,12 +60,33 @@ form {
   outline: none;
 }
 
-.button-panel {
+.button-panel1 {
   margin: 2em 0 0;
   width: 100%;
 }
 
-.button-panel .button {
+.button-panel2 {
+  margin: 2em 0 0;
+  width: 100%;
+  padding: 0px 0px 50px 0px;
+}
+
+.button-panel1 .button {
+  background: #1e90ff;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+.button-panel2 .button {
   background: #1e90ff;
   border: none;
   color: #fff;

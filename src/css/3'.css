@@ -1,0 +1,37 @@
+.navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1300px;
+  }
+  .navigation ul {
+    width: 100%;
+  }
+  .button{
+    display: block;
+    padding:10px;
+    background:white;
+    width:20%;
+    float:left;
+    transition:.2s all;
+  }
+  .button p {
+    height: 10px;
+    font-weight: 300;
+  }
+  .button a {
+    color:#333333;
+    text-decoration:none;
+  }
+  .navigation:hover .button{
+    opacity:.5;
+    transform: scale(.98);
+  }
+  .navigation:hover .button:hover{
+    transition: .5s;
+    transform:scale(1.5);
+    opacity:1;
+  }
+  .navigation:hover .button:hover > p {
+    font-weight: bold;
+  }
