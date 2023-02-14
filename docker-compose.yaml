@@ -1,0 +1,39 @@
+version: '3.3' 
+services:
+  app:  
+    build: .
+    ports:
+      - '8080:8080'
+    volumes:
+      - .:/app
+    depends_on: #dbに依存する
+      - db
+    command: ["./start.sh"]
+  db:
+    image: mysql:8.0 # MySQLのバージョンを指定 
+    container_name: db-for-techread
+    # MySQLの設定値を指定 
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --sql-mode=ONLY_FULL_GROUP_BY,NO_ENGINE_SUBSTITUTION
+      - --default-authentication-plugin=mysql_native_password
+    # コンテナ内で使用する環境変数の値を指定 
+    environment:
+  
+      MYSQL_ROOT_USER: ${ROOTUSER} # MySQLのルートユーザー名
+      MYSQL_ROOT_PASSWORD: ${ROOTPASS} # MySQLのルートユーザーのパスワード 
+      MYSQL_DATABASE: ${DATABASE} # MySQLに用意されている初期データベースの名前 
+      MYSQL_USER: ${USERNAME} # MySQLのユーザー名
+      MYSQL_PASSWORD: ${USERPASS} # MySQLのユーザーパスワード
+      TZ: 'Asia/Tokyo'
+    # コンテナの 3306 番ポートを、ローカルの 3306 番ポートにつなげる 
+    ports:
+      - "3306:3306"
+    # コンテナ内にある MySQL に格納するデータを永続化させるために使用するボリュームを指定 
+    volumes:
+      - db-volume:/var/lib/mysql
+      # - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+  # ボリュームの作成 
+volumes:
+  db-volume:
