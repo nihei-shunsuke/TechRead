@@ -14,7 +14,7 @@ func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 }
 
 func FetchProfileHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "FetchProfileHandler\n")
+	io.WriteString(w, "FetchProfileHandler...test\n")
 }
 
 func EditProfileHandler(w http.ResponseWriter, req *http.Request) {

@@ -5,7 +5,7 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - .:/app
+      - .:/go/src/TechRead
     depends_on: #dbに依存する
       - db
     command: ["./start.sh"]
