@@ -1,8 +1,15 @@
 # TechRead
 
-### 使用ライブラリ
+## 使用ライブラリ
 - gorilla: Routing, Middleware,Session
 - gorm: ORM
+
+## 起動方法
+### 初回 or Dockerfileに変更があった場合
+- `docker-compose up --build`
+### 2回目以降
+- `docker-compose up`
+
 
 |  エンドポイント  |ハンドラ|  メソッド  | 説明 |
 | ---- | ---- |---- | ---- |

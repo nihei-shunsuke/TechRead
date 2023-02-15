@@ -9,7 +9,7 @@ services:
       - .:/go/src/TechRead
     depends_on: #dbに依存する
       - db
-    command: ["/go/src/TechRead/start.sh"]
+    command: bash -c "chmod +x /go/src/TechRead/start.sh && /go/src/TechRead/start.sh"
   db:
     image: mysql:8.0 # MySQLのバージョンを指定
     container_name: db-for-techread
