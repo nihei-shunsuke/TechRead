@@ -15,7 +15,8 @@ CREATE TABLE IF NOT EXISTS comments (
   created_at    DATETIME NOT NULL DEFAULT (DATETIME('now')),
   updated_at    DATETIME NOT NULL DEFAULT (DATETIME('now')),
 
-  FOREIGN KEY (chapter_id) REFERENCES chapters(chapter_id) ON DELETE CASCADE
+  FOREIGN KEY (chapter_id) REFERENCES chapters(chapter_id) ON DELETE CASCADE --外部キー制約
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE --外部キー制約
 );
 
 CREATE TABLE IF NOT EXISTS chapters (
@@ -28,22 +29,22 @@ CREATE TABLE IF NOT EXISTS chapters (
   created_at      DATETIME NOT NULL DEFAULT (DATETIME('now')),
   updated_at      DATETIME NOT NULL DEFAULT (DATETIME('now')),
 
-  FOREIGN KEY (event_id) REFERENCES chapters(event_id) ON DELETE CASCADE
-  FOREIGN KEY (last_updater_id) REFERENCES users(user_id) ON DELETE CASCADE
+  FOREIGN KEY (event_id) REFERENCES chapters(event_id) ON DELETE CASCADE --外部キー制約
+  FOREIGN KEY (last_updater_id) REFERENCES users(user_id) ON DELETE CASCADE --外部キー制約
 );
 
 CREATE TABLE IF NOT EXISTS events (
   event_id        INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,
-  event_name      VARCHAR(100)     NOT NULL,
+  event_name      VARCHAR(100) NOT NULL,
   start_date      DATETIME,
   end_date        DATETIME,
   organizer_id    INTEGER  NOT NULL,
   created_at      DATETIME NOT NULL DEFAULT (DATETIME('now')),
   updated_at      DATETIME NOT NULL DEFAULT (DATETIME('now')),
-  
-  CREATE INDEX ON events(start_date);
-  CREATE INDEX ON events(end_date);
-  FOREIGN KEY (organizer_id) REFERENCES users(user_id) 
+
+  CREATE INDEX ON events(start_date); --インデックスを貼る
+  CREATE INDEX ON events(end_date); --インデックスを貼る
+  FOREIGN KEY (organizer_id) REFERENCES users(user_id) --外部キー制約
 );
 
 CREATE TABLE IF NOT EXISTS event_groups (
@@ -52,6 +53,7 @@ CREATE TABLE IF NOT EXISTS event_groups (
   created_at      DATETIME NOT NULL DEFAULT (DATETIME('now')),
   updated_at      DATETIME NOT NULL DEFAULT (DATETIME('now')),
 
-  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
-  FOREIGN KEY (event_id) REFERENCES events(event_id) ON DELETE CASCADE
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE --外部キー制約
+  FOREIGN KEY (event_id) REFERENCES events(event_id) ON DELETE CASCADE --外部キー制約
+  PRIMARY KEY(user_id, event_id) --複合主キー
 );
