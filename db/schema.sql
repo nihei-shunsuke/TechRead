@@ -1,0 +1,60 @@
+CREATE TABLE IF NOT EXISTS users (
+  user_id       INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  user_name     VARCHAR(40)     NOT NULL,
+  email         VARCHAR(254)     NOT NULL,
+  password      VARCHAR(20)     NOT NULL,
+  created_at    DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at    DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS events (
+  event_id        INTEGER UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  event_name      VARCHAR(100) NOT NULL,
+  start_date      DATETIME,
+  end_date        DATETIME,
+  organizer_id    INTEGER UNSIGNED NOT NULL,
+  created_at      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  FOREIGN KEY (organizer_id) REFERENCES users(user_id)
+);
+
+CREATE INDEX idx_start_date ON events(start_date);
+CREATE INDEX idx_end_date ON events(end_date);
+
+CREATE TABLE IF NOT EXISTS chapters (
+  chapter_id      INTEGER UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  chapter_num     INTEGER UNSIGNED NOT NULL,
+  event_id        INTEGER UNSIGNED NOT NULL,
+  event_date      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  content         TEXT     NOT NULL DEFAULT '',
+  last_updater_id INTEGER UNSIGNED NOT NULL,
+  created_at      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  FOREIGN KEY (event_id) REFERENCES events(event_id) ON DELETE CASCADE,
+  FOREIGN KEY (last_updater_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS comments (
+  comment_id    INTEGER UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  chapter_id    INTEGER UNSIGNED NOT NULL,
+  comment       VARCHAR(255)     NOT NULL DEFAULT '',
+  user_id       INTEGER UNSIGNED NOT NULL,
+  created_at    DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at    DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  FOREIGN KEY (chapter_id) REFERENCES chapters(chapter_id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS event_groups (
+  user_id         INTEGER UNSIGNED NOT NULL,
+  event_id        INTEGER UNSIGNED NOT NULL,
+  created_at      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+  FOREIGN KEY (event_id) REFERENCES events(event_id) ON DELETE CASCADE,
+  PRIMARY KEY(user_id, event_id)
+);
