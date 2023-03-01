@@ -2,7 +2,6 @@
 
 ## 使用ライブラリ
 - gorilla: Routing, Middleware,Session
-- gorm: ORM
 
 ## 起動方法
 ### 初回 or Dockerfileに変更があった場合
