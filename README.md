@@ -8,6 +8,11 @@
 - `docker-compose up --build`
 ### 2回目以降
 - `docker-compose up`
+### DBの初期化をするときは
+- `docker-compose down --volume`
+### DockerのDBにアクセスするときは
+- `docker exec -it db-for-techread bash`
+- `mysql -u ユーザー名 -p`
 
 
 |  エンドポイント  |ハンドラ|  メソッド  | 説明 |

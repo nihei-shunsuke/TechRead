@@ -9,6 +9,11 @@ services:
       - .:/go/src/TechRead
     depends_on: #dbに依存する
       - db
+    environment:
+      MYSQL_DATABASE: ${DATABASE}
+      MYSQL_HOST: db-for-techread  # 追加!!
+      MYSQL_USER: ${USERNAME}
+      MYSQL_PASSWORD: ${USERPASS}
     command: bash -c "chmod +x /go/src/TechRead/start.sh && /go/src/TechRead/start.sh"
   db:
     image: mysql:8.0 # MySQLのバージョンを指定
@@ -33,7 +38,7 @@ services:
     # コンテナ内にある MySQL に格納するデータを永続化させるために使用するボリュームを指定
     volumes:
       - db-volume:/var/lib/mysql
-      # - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
   # ボリュームの作成
 volumes:
   db-volume:
