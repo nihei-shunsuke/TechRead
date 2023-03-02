@@ -9,8 +9,8 @@ services:
       - .:/go/src/TechRead
     depends_on: #dbに依存する
       - db
-    environment: 
-      MYSQL_DATABASE: ${DATABASE} 
+    environment:
+      MYSQL_DATABASE: ${DATABASE}
       MYSQL_HOST: db-for-techread  # 追加!!
       MYSQL_USER: ${USERNAME}
       MYSQL_PASSWORD: ${USERPASS}
