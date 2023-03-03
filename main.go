@@ -5,19 +5,17 @@ import (
 	"TechRead/handler"
 	"fmt"
 	"net/http"
-	"time"
 
 	"github.com/gorilla/mux"
 )
 
 func main() {
 	r := mux.NewRouter()
-	//Docker内でDBが初期化されるまで待つ
-	time.Sleep(time.Second * 10)
-	db := database.Connect()
-	defer db.Close()
+	database.Connect()
+	sqlDB := database.DB
+	defer sqlDB.Close()
 
-	err := db.Ping()
+	err := sqlDB.Ping()
 
 	if err != nil {
 		fmt.Println(err)
@@ -33,8 +31,8 @@ func main() {
 	r.HandleFunc("/edit-event", handler.EditEventHandler).Methods(http.MethodPost)
 	r.HandleFunc("/event-list", handler.EventListHandler).Methods(http.MethodGet)
 	r.HandleFunc("/event-detail", handler.EventDetailHandler).Methods(http.MethodGet)
-	r.HandleFunc("/create-abstract", handler.CreateAbstractHandler).Methods(http.MethodPost)
-	r.HandleFunc("/edit-abstract", handler.EditAbstractHandler).Methods(http.MethodPost)
+	r.HandleFunc("/create-chapter", handler.CreateChapterHandler).Methods(http.MethodPost)
+	r.HandleFunc("/edit-chapter", handler.EditChapterHandler).Methods(http.MethodPost)
 
 	http.ListenAndServe(":8080", r)
 }

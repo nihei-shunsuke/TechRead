@@ -9,8 +9,8 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 )
-
-func Connect() *sql.DB {
+var DB *sql.DB
+func Connect() {
 	err := godotenv.Load()
 	if err != nil {
 		fmt.Println(err.Error())
@@ -20,13 +20,13 @@ func Connect() *sql.DB {
 	password := os.Getenv("MYSQL_PASSWORD")
 	host := os.Getenv("MYSQL_HOST")
 	port := "3306"
-	database_name := os.Getenv("DB_DATABASE_NAME")
+	database_name := os.Getenv("MYSQL_DATABASE")
 
 	dbconf := user + ":" + password + "@tcp(" + host + ":" + port + ")/" + database_name + "?charset=utf8mb4"
 
-	db, err := sql.Open("mysql", dbconf)
+	DB, err = sql.Open("mysql", dbconf)
+	
 	if err != nil {
 		fmt.Println(err.Error())
 	}
-	return db
 }
