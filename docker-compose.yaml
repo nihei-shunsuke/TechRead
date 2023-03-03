@@ -5,8 +5,6 @@ services:
     build: .
     ports:
       - "8080:8080"
-    volumes:
-      - .:/go/src/TechRead
     depends_on: #dbに依存する
       - db
     environment:
