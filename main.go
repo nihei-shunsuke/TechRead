@@ -5,15 +5,12 @@ import (
 	"TechRead/handler"
 	"fmt"
 	"net/http"
-	"time"
 
 	"github.com/gorilla/mux"
 )
 
 func main() {
 	r := mux.NewRouter()
-	//Docker内でDBが初期化されるまで待つ
-	time.Sleep(time.Second * 10)
 	database.Connect()
 	sqlDB := database.DB
 	defer sqlDB.Close()

@@ -20,7 +20,7 @@ func Connect() {
 	password := os.Getenv("MYSQL_PASSWORD")
 	host := os.Getenv("MYSQL_HOST")
 	port := "3306"
-	database_name := os.Getenv("DB_DATABASE_NAME")
+	database_name := os.Getenv("MYSQL_DATABASE")
 
 	dbconf := user + ":" + password + "@tcp(" + host + ":" + port + ")/" + database_name + "?charset=utf8mb4"
 
