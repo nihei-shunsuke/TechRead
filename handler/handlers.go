@@ -29,8 +29,9 @@ func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 	//記入されたデータのuser_idに被りがないか調べる
 	row := database.DB.QueryRow("SELECT * FROM users WHERE user_id = ?",reqUserData.Email)
 	if err := row.Err(); err != nil{
-		_, err = database.DB.Exec(sqlStr, reqUserData.UserName, reqUserData.Password, reqUserData.Email)	//戻り値としてレコードを期待しないクエリを実行する
-	/////////
+		//Exec文で戻り値としてレコードを期待しないクエリを実行する
+		//_をresultにすることで変更した行やデータを取得できる
+		_, err = database.DB.Exec(sqlStr, reqUserData.UserName, reqUserData.Password, reqUserData.Email)
 		if err != nil{
 			fmt.Println(err)
 			http.Error(w, "fail internal exec \n", http.StatusInternalServerError)
