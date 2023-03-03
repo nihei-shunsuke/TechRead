@@ -33,8 +33,8 @@ func main() {
 	r.HandleFunc("/edit-event", handler.EditEventHandler).Methods(http.MethodPost)
 	r.HandleFunc("/event-list", handler.EventListHandler).Methods(http.MethodGet)
 	r.HandleFunc("/event-detail", handler.EventDetailHandler).Methods(http.MethodGet)
-	r.HandleFunc("/create-abstract", handler.CreateAbstractHandler).Methods(http.MethodPost)
-	r.HandleFunc("/edit-abstract", handler.EditAbstractHandler).Methods(http.MethodPost)
+	r.HandleFunc("/create-chapter", handler.CreateChapterHandler).Methods(http.MethodPost)
+	r.HandleFunc("/edit-chapter", handler.EditChapterHandler).Methods(http.MethodPost)
 
 	http.ListenAndServe(":8080", r)
 }

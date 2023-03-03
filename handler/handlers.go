@@ -37,10 +37,10 @@ func EventDetailHandler(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, "EventDetailHandler\n")
 }
 
-func CreateAbstractHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "CreateAbstractHandler\n")
+func CreateChapterHandler(w http.ResponseWriter, req *http.Request) {
+	io.WriteString(w, "CreateChapterHandler\n")
 }
 
-func EditAbstractHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "EditAbstractHandler\n")
+func EditChapterHandler(w http.ResponseWriter, req *http.Request) {
+	io.WriteString(w, "EditChapterHandler\n")
 }

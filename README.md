@@ -25,8 +25,8 @@
 |  /edit-event | EditEventHandler |  POST  |イベント編集機能|
 |  /event-list  | EventListHandler |  GET  |イベント一覧取得|
 |  /event-detail | EventDetailHandler |  GET  |イベント詳細|
-|  /create-abstract | CreateAbstractHandler |  POST  |議事録作成|
-|  /edit-abstract | EditAbstractHandler |  POST  |議事録編集|
+|  /create-chapter | CreateChapterHandler |  POST  |議事録作成|
+|  /edit-chapter | EditChapterHandler |  POST  |議事録編集|
 
 
 ## LoginHandler
