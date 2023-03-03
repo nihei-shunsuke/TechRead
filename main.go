@@ -14,10 +14,11 @@ func main() {
 	r := mux.NewRouter()
 	//Docker内でDBが初期化されるまで待つ
 	time.Sleep(time.Second * 10)
-	db := database.Connect()
-	defer db.Close()
+	database.Connect()
+	sqlDB := database.DB
+	defer sqlDB.Close()
 
-	err := db.Ping()
+	err := sqlDB.Ping()
 
 	if err != nil {
 		fmt.Println(err)
