@@ -1,17 +1,12 @@
 package handler
 
 import (
-	"encoding/json"
-	"io"
-	"net/http"
-	"fmt"
 	"TechRead/database"
 	"TechRead/model"
+	"encoding/json"
+	"fmt"
+	"net/http"
 )
-
-func LoginHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "LoginHandler\n")
-}
 
 func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 	var reqUserData model.User
@@ -27,12 +22,12 @@ func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 		(?,?,?);
 	`
 	//記入されたデータのuser_idに被りがないか調べる
-	row := database.DB.QueryRow("SELECT * FROM users WHERE user_id = ?",reqUserData.Email)
-	if err := row.Err(); err != nil{
+	row := database.DB.QueryRow("SELECT * FROM users WHERE user_id = ?", reqUserData.Email)
+	if err := row.Err(); err != nil {
 		//Exec文で戻り値としてレコードを期待しないクエリを実行する
 		//_をresultにすることで変更した行やデータを取得できる
 		_, err = database.DB.Exec(sqlStr, reqUserData.UserName, reqUserData.Password, reqUserData.Email)
-		if err != nil{
+		if err != nil {
 			fmt.Println(err)
 			http.Error(w, "fail internal exec \n", http.StatusInternalServerError)
 			return
@@ -44,36 +39,4 @@ func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 		fmt.Println("このメールアドレスは使用されています")
 		return
 	}
-}
-
-func FetchProfileHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "FetchProfileHandler\n")
-}
-
-func EditProfileHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "EditProfileHandler\n")
-}
-
-func CreateEventHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "CreateEventHandler\n")
-}
-
-func EditEventHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "EditEventHandler\n")
-}
-
-func EventListHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "EventListHandler\n")
-}
-
-func EventDetailHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "EventDetailHandler\n")
-}
-
-func CreateChapterHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "CreateChapterHandler\n")
-}
-
-func EditChapterHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "EditChapterHandler\n")
 }
