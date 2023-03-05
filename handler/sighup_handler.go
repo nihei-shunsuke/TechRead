@@ -21,8 +21,8 @@ func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 		insert into users (user_name, password, email) values
 		(?,?,?);
 	`
-	//記入されたデータのuser_idに被りがないか調べる
-	row := database.DB.QueryRow("SELECT * FROM users WHERE user_id = ?", reqUserData.Email)
+	//記入されたデータのuser_Emailに被りがないか調べる
+	row := database.DB.QueryRow("SELECT * FROM users WHERE email = ?", reqUserData.Email)
 	if err := row.Err(); err != nil {
 		//Exec文で戻り値としてレコードを期待しないクエリを実行する
 		//_をresultにすることで変更した行やデータを取得できる
