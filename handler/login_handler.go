@@ -22,23 +22,21 @@ func LoginHandler(w http.ResponseWriter, req *http.Request) {
 		http.Error(w, "fail internal email \n", http.StatusInternalServerError)
 		return
 	}
-	rows, err := database.DB.Query("SELECT email, password FROM users WHERE email = ?", reqUserData.Email)//存在する場合
-	if err != nil {
+	rows := database.DB.QueryRow("SELECT email, password FROM users WHERE email = ?", reqUserData.Email)//存在する場合
+	if row == sql.ErrNoRows {
 		http.Error(w, "fail internal email \n", http.StatusInternalServerError)
 		return
 	}
-	for rows.Next() {
-		u := reqUserData
-		err := rows.Scan(&u.Email,&u.Password)
-		if err != nil {
-			fmt.Println("データの読み込みに失敗しました",err)
-			return
-		}
-		if reqUserData.Password != u.Password {
-			fmt.Println("パスワードが違います")
-			return
-		}
+	u := reqUserData
+	err := rows.Scan(&u.Email,&u.Password)
+	if err != nil {
+		fmt.Println("データの読み込みに失敗しました",err)
+		return
+	}
+	if reqUserData.Password != u.Password {
+		fmt.Println("パスワードが違います")
+		return
+	}
 	fmt.Println("ログインしました")
 	json.NewEncoder(w).Encode(reqUserData)
-	}
 }
