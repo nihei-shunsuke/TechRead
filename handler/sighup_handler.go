@@ -23,19 +23,18 @@ func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 		(?,?,?);
 	`
 	//記入されたデータのuser_Emailに被りがないか調べる
-	u := reqUserData
-	row := database.DB.QueryRow("SELECT email FROM users WHERE email = ?", u.Email).Scan(&u.Email)
+	row := database.DB.QueryRow("SELECT email FROM users WHERE email = ?", reqUserData.Email).Scan(&reqUserData.Email)
 	if row == sql.ErrNoRows {
 		//Exec文で戻り値としてレコードを期待しないクエリを実行する
 		//_をresultにすることで変更した行やデータを取得できる
-		_, err := database.DB.Exec(sqlStr, u.UserName, u.Password, u.Email)
+		_, err := database.DB.Exec(sqlStr, reqUserData.UserName, reqUserData.Password, reqUserData.Email)
 		if err != nil {
 			fmt.Println(err)
 			http.Error(w, "fail internal exec \n", http.StatusInternalServerError)
 			return
 		}
 		//ストリームにしてhttpレスポンスに出力している。
-		json.NewEncoder(w).Encode(u)
+		json.NewEncoder(w).Encode(reqUserData)
 		return
 	} else {
 		fmt.Println("このメールアドレスは使用されています")

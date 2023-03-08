@@ -16,19 +16,19 @@ func LoginHandler(w http.ResponseWriter, req *http.Request) {
 		http.Error(w, "fail to decode json\n", http.StatusBadRequest)
 	}
 	//入力されたEmailが存在しているかどうかを調べる
-	u := reqUserData
-	row := database.DB.QueryRow("SELECT email FROM users WHERE email = ?", u.Email).Scan(&u.Email)
+	row := database.DB.QueryRow("SELECT email FROM users WHERE email = ?", reqUserData.Email).Scan(&reqUserData.Email)
 	if row == sql.ErrNoRows {
 		fmt.Println("メールアドレスが違います")//入力されたメールアドレスが存在しない場合
 		http.Error(w, "fail internal email \n", http.StatusInternalServerError)
 		return
 	}
-	rows, err := database.DB.Query("SELECT email, password FROM users WHERE email = ?", u.Email)//存在する場合
+	rows, err := database.DB.Query("SELECT email, password FROM users WHERE email = ?", reqUserData.Email)//存在する場合
 	if err != nil {
 		http.Error(w, "fail internal email \n", http.StatusInternalServerError)
 		return
 	}
 	for rows.Next() {
+		u := reqUserData
 		err := rows.Scan(&u.Email,&u.Password)
 		if err != nil {
 			fmt.Println("データの読み込みに失敗しました",err)
