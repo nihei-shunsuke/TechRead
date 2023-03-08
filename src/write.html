@@ -4,7 +4,7 @@
       <link rel="icon" type="image/png" href="images/logo.png">
         <meta charset="utf-8">
         <title>輪読会</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/text.css">
     </head> 
 
     <body>
@@ -18,15 +18,15 @@
           </ul>
         </nav>
       </header> 
-      
-      
-      <div class="contents">
-        <h1>議事録一覧</h1>
-        <input id="acd-check1" class="acd-check" type="checkbox">
-        <label class="acd-label" for="acd-check1">開く▽</label>
-        <div class="acd-content">
-          <p>内容</p>
-        </div>
 
-      </div>
-    </body>
+      <div class="text">
+        <h1>議事録作成</h1>
+        <form action="#" id="form" class="form">
+            <label for="title">書籍名</label>
+            <textarea id="title" class="title"></textarea>
+            <label for="word">内容</label>
+            <textarea type="text" id="word" class="word"></textarea>
+            <button type="button" id="btn">作成</button>
+            <script src="js/article/1.js"></script>
+        </form>
+     </div>
