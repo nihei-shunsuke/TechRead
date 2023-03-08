@@ -7,10 +7,12 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 )
 
 func main() {
 	r := mux.NewRouter()
+	c := cors.Default()
 	database.Connect()
 	sqlDB := database.DB
 	defer sqlDB.Close()
@@ -33,6 +35,6 @@ func main() {
 	r.HandleFunc("/event-detail", handler.EventDetailHandler).Methods(http.MethodGet)
 	r.HandleFunc("/create-chapter", handler.CreateChapterHandler).Methods(http.MethodPost)
 	r.HandleFunc("/edit-chapter", handler.EditChapterHandler).Methods(http.MethodPost)
-
-	http.ListenAndServe(":8080", r)
+	handler := c.Handler(r)
+	http.ListenAndServe(":8080", handler)
 }
