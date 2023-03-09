@@ -26,6 +26,7 @@ CREATE INDEX idx_end_date ON events(end_date);
 CREATE TABLE IF NOT EXISTS chapters (
   chapter_id      INTEGER UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
   chapter_num     INTEGER UNSIGNED NOT NULL,
+  venue           VARCHAR(100) NOT NULL,
   event_id        INTEGER UNSIGNED NOT NULL,
   event_date      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   content         TEXT     NOT NULL DEFAULT '',

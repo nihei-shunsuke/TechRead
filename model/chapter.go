@@ -5,6 +5,7 @@ import "time"
 type Chapter struct {
 	ChapterID     int       `db:"chapter_id" form:"chapter_id" json:"chapter_id"`
 	ChapterNum    int       `db:"chapter_num" form:"chapter_num" json:"chapter_num"`
+	Venue         string    `db:"venue" form:"venue" json:"venue"`
 	EventID       int       `db:"event_id" form:"event_id" json:"event_id"`
 	EventDate     time.Time `db:"event_date" form:"event_date" json:"event_date"`
 	Content       int       `db:"content" form:"content" json:"content"`
