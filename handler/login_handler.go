@@ -27,13 +27,13 @@ func LoginHandler(w http.ResponseWriter, req *http.Request) {
 		http.Error(w, "fail internal email \n", http.StatusInternalServerError)
 		return
 	}
-	u := reqUserData
-	err := rows.Scan(&u.Email,&u.Password)
+	var reqUserData, userRecord model.User
+	err := rows.Scan(&userRecord.UserName,&userRecord.Email,&userRecord.Password)
 	if err != nil {
 		fmt.Println("データの読み込みに失敗しました",err)
 		return
 	}
-	if reqUserData.Password != u.Password {
+	if reqUserData.Password != userRecord.Password {
 		fmt.Println("パスワードが違います")
 		return
 	}
