@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS events (
   event_id        INTEGER UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
   event_name      VARCHAR(100) NOT NULL,
+  book_name       VARCHAR(100) NOT NULL,
   start_date      DATETIME,
   end_date        DATETIME,
   organizer_id    INTEGER UNSIGNED NOT NULL,

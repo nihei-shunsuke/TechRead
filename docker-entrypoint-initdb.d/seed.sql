@@ -5,9 +5,9 @@ INSERT INTO users (
 );
 
 INSERT INTO events (
-  event_name, start_date, organizer_id, created_at, updated_at
+  event_name, book_name, start_date, organizer_id, created_at, updated_at
 ) VALUES (
-  'リーダブルコード輪読会', now(), 1, now(), now()
+  'リーダブルコード輪読会', 'リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック',now(), 1, now(), now()
 );
 
 INSERT INTO chapters (
