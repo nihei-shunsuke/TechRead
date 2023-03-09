@@ -77,7 +77,7 @@ h1{
   margin-top: 10px;
 }
 
-.acd-content{
+.acd-panel{
   background-color: #F2F6FF;
   height: auto;
   width: 80%; 
@@ -87,10 +87,9 @@ h1{
   visibility: hidden;
 }
 
-.acd-check:checked + .acd-label + .acd-content{
+.acd-check:checked + .acd-label + .acd-panel{
   height:100px;
   opacity: 1;    /* 透明度 */
   padding: 10px;
   visibility: visible;
 }
-
