@@ -35,6 +35,7 @@ func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 		}
 		//ストリームにしてhttpレスポンスに出力している。
 		json.NewEncoder(w).Encode(reqUserData)
+		io.WriteString(w, "アカウントが作成されました\n")
 		return
 	} else {
 		fmt.Println("このメールアドレスは使用されています")
