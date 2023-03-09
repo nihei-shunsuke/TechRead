@@ -13,20 +13,25 @@
         <h1>新規会員登録</h1>
       <form>
       <div class="form-item">
-            <label for="username"></label>
+            <label for="username"></label> <!-- forとidを同じ値にする -->
             <input type="username" id="username" required="required" placeholder="ユーザー名"></input>
+            <!-- requiredは入力必須の指定 -->
       </div>
+
       <div class="form-item">
         <label for="email"></label>
         <input type="email" id="email" required="required" placeholder="メールアドレス"></input>
       </div>
+
       <div class="form-item">
-        <label for="password"></label>
+        <label for="password"></label> 
         <input type="password" id="password" required="required" placeholder="パスワード"></input>
       </div>
+
       <div class="button-panel2">
-        <input type="button" class="button" title="登録" value="登録" id="btn"></input>
+        <input type="submit" class="button" title="登録" value="登録" id="btn"></input>
       </div>
+
       <script src="js/article/2.js"></script>
     </form>
   </body>
