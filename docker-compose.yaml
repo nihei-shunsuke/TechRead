@@ -7,6 +7,8 @@ services:
       - "8080:8080"
     depends_on: #dbに依存する
       - db
+    volumes:
+      - .:/go/src/TechRead
     environment:
       MYSQL_DATABASE: ${DATABASE}
       MYSQL_HOST: db-for-techread  # 追加!!

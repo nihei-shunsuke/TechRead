@@ -6,6 +6,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"io"
+	"database/sql"
 )
 
 func SignUpHandler(w http.ResponseWriter, req *http.Request) {
@@ -21,12 +23,12 @@ func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 		insert into users (user_name, password, email) values
 		(?,?,?);
 	`
-	//記入されたデータのuser_idに被りがないか調べる
-	row := database.DB.QueryRow("SELECT * FROM users WHERE user_id = ?", reqUserData.Email)
-	if err := row.Err(); err != nil {
+	//記入されたデータのuser_Emailに被りがないか調べる
+	row := database.DB.QueryRow("SELECT email FROM users WHERE email = ?", reqUserData.Email).Scan(&reqUserData.Email)
+	if row == sql.ErrNoRows {
 		//Exec文で戻り値としてレコードを期待しないクエリを実行する
 		//_をresultにすることで変更した行やデータを取得できる
-		_, err = database.DB.Exec(sqlStr, reqUserData.UserName, reqUserData.Password, reqUserData.Email)
+		_, err := database.DB.Exec(sqlStr, reqUserData.UserName, reqUserData.Password, reqUserData.Email)
 		if err != nil {
 			fmt.Println(err)
 			http.Error(w, "fail internal exec \n", http.StatusInternalServerError)
@@ -34,9 +36,8 @@ func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 		}
 		//ストリームにしてhttpレスポンスに出力している。
 		json.NewEncoder(w).Encode(reqUserData)
-		return
-	} else {
-		fmt.Println("このメールアドレスは使用されています")
+		io.WriteString(w, "アカウントが作成されました\n")
 		return
 	}
+	fmt.Println("このメールアドレスは使用されています")
 }
