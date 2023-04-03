@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <title>輪読会</title>
         <link rel="stylesheet" href="../css/text.css">
-    </head> 
+    </head>
 
     <body>
       <header class="header">
@@ -17,28 +17,26 @@
             <li><a href="login.html"><img src="../images/account.png"></a></li>
           </ul>
         </nav>
-      </header> 
+      </header>
 
       <div class="text">
         <h1>イベント作成</h1>
-        <form action="#" id="form" class="form">
+        <form id="create-event-form" class="form">
 
             <label for="event">イベント名</label>
-            <input type="text" id="event" class="event"><br>
+            <input type="text" id="event_name" class="event"><br>
 
             <label for="title">書籍名</label>
-            <input type="text" id="title" class="title"><br>
-          
-            
-            <div class="member-add">
-              <label for="member">メンバーを追加する</label>
+            <input type="text" id="book_name" class="title"><br>
+
+            <div id="add-member" class="member-add">
+              <label for="member">メンバーを追加する(ユーザ名)</label>
               <input type="text" id="member" class="member">
-              <button class="add">+</button>
+              <button id="add-member-button" class="add">+</button>
             </div>
 
-            <button type="button" id="btn" class="create">作成</button>
-        
+            <button type="button" id="create-btn" class="create">作成</button>
+
         </form>
-        <script src="../js/article/create-event.js"></script>
+        <script src="../js/event/create-event.js"></script>
      </div>
-     
