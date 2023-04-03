@@ -12,10 +12,14 @@ import (
 
 func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 	var reqUserData model.User
+	var resState model.ResInfo
 	//httpリクエスト(req.Body)に入ってるjsonデータ(model.User)を基にUser構造体にデコードする
 	if err := json.NewDecoder(req.Body).Decode(&reqUserData); err != nil {
 		fmt.Println(err)
 		http.Error(w, "fail to decode json\n", http.StatusBadRequest)
+		ResFail(resState)
+		json.NewEncoder(w).Encode(resState)
+		return
 	}
 	fmt.Println(reqUserData)
 	//User構造体にクライアントが記入したデータを入れる処理を書く、またはその関数を記述する//
@@ -28,14 +32,20 @@ func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 	if row == sql.ErrNoRows {
 		//Exec文で戻り値としてレコードを期待しないクエリを実行する
 		//_をresultにすることで変更した行やデータを取得できる
-		_, err := database.DB.Exec(sqlStr, reqUserData.UserName, reqUserData.Password, reqUserData.Email)
+		result, err := database.DB.Exec(sqlStr, reqUserData.UserName, reqUserData.Password, reqUserData.Email)
 		if err != nil {
 			fmt.Println(err)
 			http.Error(w, "fail internal exec \n", http.StatusInternalServerError)
+			ResFail(resState)
+			json.NewEncoder(w).Encode(resState)
 			return
 		}
 		//ストリームにしてhttpレスポンスに出力している。
-		json.NewEncoder(w).Encode(reqUserData)
+		id,_ := result.LastInsertId()
+		_, err = database.DB.Exec("INSERT INTO users (user_id VALUES (?)", id)
+		resState.ResState = "success"
+		resState.UserID = id
+		json.NewEncoder(w).Encode(resState)
 		io.WriteString(w, "アカウントが作成されました\n")
 		return
 	}
