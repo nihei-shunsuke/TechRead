@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS events (
   event_id        INTEGER UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
   event_name      VARCHAR(100) NOT NULL,
+  book_name       VARCHAR(100) NOT NULL,
   start_date      DATETIME,
   end_date        DATETIME,
   organizer_id    INTEGER UNSIGNED NOT NULL,
@@ -25,6 +26,7 @@ CREATE INDEX idx_end_date ON events(end_date);
 CREATE TABLE IF NOT EXISTS chapters (
   chapter_id      INTEGER UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
   chapter_num     INTEGER UNSIGNED NOT NULL,
+  venue           VARCHAR(100) NOT NULL,
   event_id        INTEGER UNSIGNED NOT NULL,
   event_date      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   content         TEXT     NOT NULL DEFAULT '',
