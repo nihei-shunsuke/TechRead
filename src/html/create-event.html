@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <link rel="icon" type="image/png" href="../images/logo.png">
-        <meta charset="utf-8">
-        <title>輪読会</title>
-        <link rel="stylesheet" href="../css/text.css">
-    </head>
+  <head>
+    <link rel="icon" type="image/png" href="../images/logo.png">
+      <meta charset="utf-8">
+      <title>輪読会</title>
+      <link rel="stylesheet" href="../css/text.css">
+  </head>
 
-    <body>
-      <header class="header">
-        <nav class="navigation">
-          <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
-          <h1>TechRead</h1>
-          <ul>
-            <li><a href=""><img src="../images/plus.png"></a></li>
-            <li><a href="login.html"><img src="../images/account.png"></a></li>
-          </ul>
-        </nav>
-      </header>
+  <body>
+    <header class="header">
+      <nav class="navigation">
+        <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+        <h1>TechRead</h1>
+        <ul>
+          <li><a href=""><img src="../images/plus.png"></a></li>
+          <li><a href="login.html"><img src="../images/account.png"></a></li>
+        </ul>
+      </nav>
+    </header>
 
-      <div class="text">
-        <h1>イベント作成</h1>
-        <form id="create-event-form" class="form">
+    <div class="text">
+      <h1>イベント作成</h1>
+      <form id="create-event-form" class="form">
+        <label for="event">イベント名</label>
+        <input type="text" id="event_name" class="event"><br>
 
-            <label for="event">イベント名</label>
-            <input type="text" id="event_name" class="event"><br>
+        <label for="title">書籍名</label>
+        <input type="text" id="book_name" class="title"><br>
 
-            <label for="title">書籍名</label>
-            <input type="text" id="book_name" class="title"><br>
+        <div id="add-member" class="member-add">
+          <label for="member">メンバーを追加する(ユーザ名)</label>
+          <input type="text" id="member" class="member">
+          <button id="add-member-button" class="add">+</button>
+        </div>
 
-            <div id="add-member" class="member-add">
-              <label for="member">メンバーを追加する(ユーザ名)</label>
-              <input type="text" id="member" class="member">
-              <button id="add-member-button" class="add">+</button>
-            </div>
-
-            <button type="button" id="create-btn" class="create">作成</button>
-
-        </form>
-        <script src="../js/event/create-event.js"></script>
-     </div>
+        <button type="button" id="create-btn" class="create">作成</button>
+      </form>
+    </div>
+    <script src="../js/event/create-event.js"></script>
+  </body>
+</html>
