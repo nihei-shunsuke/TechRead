@@ -57,5 +57,8 @@ func LoginHandler(w http.ResponseWriter, req *http.Request) {
 	resState.ResState = "success"
 	resState.UserID = userRecord.UserID
 	fmt.Println("ログインしました")
+	cookie := http.Cookie{Name: "ID", Value: reqUserData.Email, Path: "/", HttpOnly: true}
+	fmt.Println(cookie)
+	http.SetCookie(w, &cookie)
 	json.NewEncoder(w).Encode(resState)
 }
