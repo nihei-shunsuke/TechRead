@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
+
+* {
+  margin: 0px; 
+  padding: 0px;
+  list-style:none
+}
+
+body {
+  background-color: #fff;
+  font-family: 'Hachi Maru Pop', cursive;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.header {
+  background-color: #303C5E;
+  color: #fff;
+  font-size: 20px;
+  height: 62px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .3);
+}
+
+.event-name {
+  margin-bottom: 15px;
+  margin-left: 93px;
+  font-size: 25px;
+}
+
+.navigation {
+  display: flex;
+}
+
+.header h1 {
+  margin-left: 20px;
+  margin-top: 7px;
+}
+
+/* 中身 */
+.contents {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .5);
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+}
+
+/* それぞれの項目の親 */
+.date-contents {
+  width: 15%;
+}
+
+.chapter-contents {
+  width: 10%;
+}
+
+.content {
+  width: 67%;
+}
+
+.display-contents {
+  width: 8%;
+}
+
+/* それぞれの項目のラベル */
+.date,.chapter,.detail, .free-content {
+  color: #fff;
+  background-color: #303C5E;
+  font-size: 19px;
+  text-align: center;
+  height: 40px;
+  padding-top: 10px;
+}
+
+/* それぞれの項目の表示欄 */
+.input-date,.input-chapter, .input-content {
+  text-align: center;
+  font-size: 20px;
+}
+
+
+/* ドロップダウンボックス */
+.dropdown {
+  position: relative;
+}
+
+.dropdown__btn {
+  display: block;
+  width: 1.5em;
+  background: none;
+  border: 0;
+  margin: 15px auto;
+}
+
+.dropdown__btn.is-open::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.dropdown__btn.is-open + .dropdown__body {
+  display: block;
+  z-index: 5;
+}
+
+.dropdown__body {
+  display: none;
+  width: 90px;
+  background: #fff;
+  box-shadow: 0 2px 6px 2px rgba(60,64,67,0.149), 0 1px 2px 0 rgba(60,64,67,0.302);
+  border-radius: 4px;
+  overflow: hidden;
+  position: absolute;
+  top: 32px;
+  left: 0;
+}
+
+.dropdown__item {
+  display: block;
+}
+
+.dropdown__item-link {
+  display: block;
+  padding: 0.5em 1.2em;
+  font-size: 0.95em;
+  text-decoration: none;
+  color: #444;
+}
+
+.dropdown__item-link:hover {
+  background: #fbfbfb;
+}
+
+
+.input-content {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  font-size: 18px;
+}
+
+.input-content button {
+  margin: 15px auto;
+  background-color: #fff;
+  border: none;
+  font-size: 20px;
+}
+
+/* 本文を隠す高さを指定 */
+.input-content p {
+  position: relative;
+  height: 45px;
+  overflow: hidden;
+}
+
+/* もっと見るボタンで高さを自動に */
+p.active {
+  height: auto;
+}
+
+/* 透過グラデーションをposition指定 */
+p::before {
+  content: ""; 
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(rgba(255, 255, 255, 0) 0, #fff 90%);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* もっと見るボタンで透過グラデーションを解除 */
+p.active::before {
+  background: none;
+}
