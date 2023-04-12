@@ -4,27 +4,27 @@
     <link rel="icon" type="image/png" href="../images/logo.png">
       <meta charset="utf-8">
       <title>輪読会</title>
-      <link rel="stylesheet" href="../css/text.css">
+      <link rel="stylesheet" href="../css/create-chapter.css">
   </head>
 
   <body>
     <header class="header">
       <nav class="navigation">
-        <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
         <h1>TechRead</h1>
         <ul>
-          <li><a href=""><img src="../images/plus.png"></a></li>
-          <li><a href="login.html"><img src="../images/account.png"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
         </ul>
       </nav>
-    </header>
+    </header> 
 
     <div class="text">
       <h1>議事録作成</h1>
+      
       <form action="./login.html" id="form" class="form" method="POST">
         <div class="calendar">
           <label for="date">日付</label>
-          <input name="date" type="date" class="date" id="date"><br>
+          <input name="date" type="date" class="date" id="date" height=""><br>
         </div>
 
         <label for="place">開催場所</label>
@@ -33,11 +33,12 @@
         <label for="chapter">章</label>
         <input type="text" id="chapter" class="chapter"><br>
 
-        <label for="word">内容</label>
+        <div class="input--">
+        <label for="word" class="label-word">内容</label>
         <textarea type="text" id="word" class="word"></textarea>
-
-        <button type="button" id="create-chapter-btn" class="create">作成</button>
+        </div>
       </form>
+      <button type="button" id="create-chapter-btn" class="btn">作成</button>
     </div>
     <script src="../js/chapter/create-chapter.js"></script>
   </body>
