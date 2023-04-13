@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"strconv"
 	"database/sql"
 )
 
@@ -57,5 +58,9 @@ func LoginHandler(w http.ResponseWriter, req *http.Request) {
 	resState.ResState = "success"
 	resState.UserID = userRecord.UserID
 	fmt.Println("ログインしました")
+	SID := strconv.FormatInt(userRecord.UserID, 10)
+	cookie := http.Cookie{Name: "ID", Value: SID, Path: "/", HttpOnly: true}
+	fmt.Println(cookie)
+	http.SetCookie(w, &cookie)
 	json.NewEncoder(w).Encode(resState)
 }
