@@ -1,31 +1,29 @@
-function btn1(){    
-    // 入力フォームの内容を取得
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    // 入力内容を出力
-    console.log(email);
-    console.log(password);
+const postLogin = async () => {
+  // 入力フォームの内容を取得
+  const email = await document.getElementById('email').value;
+  const password = await document.getElementById('password').value;
 
-    const parameter = {
-        method:'POST',
-        mode:'no-cors',
-        headers:{
-            'Content-Type':'application/json'
-        },
-        body: JSON.stringify({
-            email: email,
-            password: password
-        })
-    };
-    fetch('http://localhost:8080/sign-up', parameter).then((response) => {
-        console.log(response);
+  // 入力内容を出力
+  console.log(email);
+  console.log(password);
+
+  const parameter = await {
+    method: 'POST',
+    cache: "no-cache",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email: email,
+      password: password
     })
-    .catch(err => {
-        console.error(err);
-    })
-    // console.log(r);
+  };
+
+  const response = await fetch("http://localhost:8080/login", parameter);
+  const res = await response.json();
+  console.log(res);
+
+  if (res.res_state == 'success') {
+    window.location.href = '../html/event-list.html';
+  };
 }
-
-const btn = document.getElementById('btn');
-
-btn.onclick = btn1;
