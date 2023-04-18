@@ -15,5 +15,6 @@
 # vendor/
 tmp/
 .idea/
-
+.vscode/
+.DS_Store
 # .env

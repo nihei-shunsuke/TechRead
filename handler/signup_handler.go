@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"io"
 	"database/sql"
 )
 
@@ -42,12 +41,15 @@ func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 		}
 		//ストリームにしてhttpレスポンスに出力している。
 		id,_ := result.LastInsertId()
-		_, err = database.DB.Exec("INSERT INTO users (user_id VALUES (?)", id)
+		_, _ = database.DB.Exec("INSERT INTO users (user_id VALUES (?)", id)
 		resState.ResState = "success"
 		resState.UserID = id
 		json.NewEncoder(w).Encode(resState)
-		io.WriteString(w, "アカウントが作成されました\n")
+		fmt.Println("アカウントが作成されました")
 		return
 	}
+	resState.ResState = "failed"
+	resState.UserID = 0
+	json.NewEncoder(w).Encode(resState)
 	fmt.Println("このメールアドレスは使用されています")
 }
