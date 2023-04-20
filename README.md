@@ -28,6 +28,10 @@
 |  /create-chapter | CreateChapterHandler |  POST  |議事録作成|
 |  /edit-chapter | EditChapterHandler |  POST  |議事録編集|
 
+### Cookieについて
+- user_id: ログインしてるユーザID
+/login, /sign-upのレスポンスで来たuser_idをフロントエンド側でCookieに入れて、リクエストの度に送る。
+
 
 ## /login
 ### Request(POST)
@@ -151,10 +155,11 @@
 ### Request(POST)
 | JSON Key | 型 | サイズ | 必須 | 値の説明 |
 |:-----------|:-----------|:-----------|:-----------|:-----------|
+| event_id | int | 40 | ○ | イベントID |
 | event_date | date | 40 | ○ | 開催日 |
 | venue | string | 254 | ○ | 開催場所 |
 | chapter_num | int | 20 | ○ | 章 |
-| content | int | 20 | ○ | 内容 |
+| content | string | 20 | ○ | 内容 |
 
 ### Response(POST)
 #### 成功の場合
