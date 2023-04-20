@@ -39,6 +39,8 @@ function create_chapter() {
   .catch(err => {
     console.err(err);
   })
+
+  location.href='../html/chapter-list.html';
 };
 
 const create_chapter_btn = document.getElementById('create-chapter-btn');

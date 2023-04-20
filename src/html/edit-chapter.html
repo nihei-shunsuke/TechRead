@@ -3,7 +3,7 @@
   <head>
     <link rel="icon" type="image/png" href="../images/logo.png">
       <meta charset="utf-8">
-      <title>輪読会</title>
+      <title>TechRead</title>
       <link rel="stylesheet" href="../css/create-chapter.css">
   </head>
 
@@ -11,9 +11,9 @@
     <header class="header">
       <nav class="navigation">
         <h1>TechRead</h1>
-        <ul>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
+        <ul class="header-ul">
+          <li class="header-item"><a href="../html/chapter-list.html">議事録一覧</a></li>
+          <li class="header-item"><a href="../html/toppage.html">ログアウト</a></li>
         </ul>
       </nav>
     </header> 
@@ -38,7 +38,7 @@
         <textarea type="text" id="word" class="word"></textarea>
         </div>
       </form>
-      <button type="button" id="create-chapter-btn" class="btn">完了</button>
+      <button type="button" id="create-chapter-btn" class="btn" onclick="location.href='../html/chapter-list.html'">完了</button>
     </div>
     <script src="../js/chapter/create-chapter.js"></script>
   </body>

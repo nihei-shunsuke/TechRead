@@ -12,9 +12,9 @@
         <nav class="navigation">
           <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
           <h1>TechRead</h1>
-          <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
+          <ul class="header-ul">
+            <li class="header-item"><a href="#"></a></li>
+            <li class="header-item"><a href="../html/toppage.html">ログアウト</a></li>
           </ul>
         </nav>
       </header> 
@@ -24,7 +24,7 @@
         <div class="bookname-contents">
           <div class="book-name">書籍名</div>
           <div class="input-book-name">
-            リーダブルコード
+            <p onclick="location.href='../html/chapter-list.html'">リーダブルコード</p>
           </div>
         </div>
 
@@ -43,14 +43,12 @@
             </button>
             <div class="dropdown__body">
               <ul class="dropdown__list">
-                <li class="dropdown__item"><a href="#" class="dropdown__item-link">編集</a></li>
-                <li class="dropdown__item"><a href="#" class="dropdown__item-link">追加</a></li>
+                <li class="dropdown__item"><a href="../html/edit-event.html" class="dropdown__item-link">編集</a></li>
                 <li class="dropdown__item"><a href="#" class="dropdown__item-link">削除</a></li>
               </ul>
             </div>
           </div>
         </div>
-      
       </div>
 
     <script>
@@ -65,6 +63,8 @@
         });
       }());
     </script>
+
+    <div class="add"><button class="add-event" onclick="location.href='../html/create-event.html'">イベントを追加する</button></div>
 
     </body>
     
