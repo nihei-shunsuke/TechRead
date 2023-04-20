@@ -11,49 +11,45 @@ import (
 
 func LoginHandler(w http.ResponseWriter, req *http.Request) {
 	var reqUserData model.User
+	var userRecord model.User
 	var resState model.ResInfo
+	//リクエストをreqUserDataに書き込む
 	if err := json.NewDecoder(req.Body).Decode(&reqUserData); err != nil {
-		fmt.Println(err)
-		http.Error(w, "fail to decode json\n", http.StatusBadRequest)
 		ResFail(resState)
 		json.NewEncoder(w).Encode(resState)
 		return
 	}
 	//入力されたEmailが存在しているかどうかを調べる
 	row := database.DB.QueryRow("SELECT email FROM users WHERE email = ?", reqUserData.Email).Scan(&reqUserData.Email)
-	if row == sql.ErrNoRows {
-		fmt.Println("メールアドレスが違います")//入力されたメールアドレスが存在しない場合
-		http.Error(w, "fail internal email \n", http.StatusInternalServerError)
+	if row == sql.ErrNoRows {//もしメールアドレスが存在しない場合
 		ResFail(resState)
 		json.NewEncoder(w).Encode(resState)
 		return
 	}
+	//ユーザーが入力したメールアドレスからそれらの情報をrowsに入れる
 	rows,err := database.DB.Query("SELECT user_id ,email, password FROM users WHERE email = ?", reqUserData.Email)//存在する場合
-	if err != nil {
-		http.Error(w, "fail internal email \n", http.StatusInternalServerError)
+	if err != nil {//もし上の処理でエラーが出た場合
 		ResFail(resState)
 		json.NewEncoder(w).Encode(resState)
 		return
 	}
-	fmt.Println(rows)
 
-	var userRecord model.User
-	for rows.Next() {
+	for rows.Next() {//上の情報をここでuserRecordに書き込む
 		err = rows.Scan(&userRecord.UserID,&userRecord.Email,&userRecord.Password)
 		if err != nil {
-			fmt.Println("データの読み込みに失敗しました",err)
 			ResFail(resState)
 			json.NewEncoder(w).Encode(resState)
 			return
 		}
 		fmt.Println(userRecord.Email,userRecord.Password)
 	}
+	//ここでパスワードの比較
 	if reqUserData.Password != userRecord.Password {
-		fmt.Println("パスワードが違います")
 		ResFail(resState)
 		json.NewEncoder(w).Encode(resState)
 		return
 	}
+	//レスポンスに成功とユーザーのIDを送信する
 	resState.ResState = "success"
 	resState.UserID = userRecord.UserID
 	fmt.Println("ログインしました")
