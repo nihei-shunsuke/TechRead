@@ -33,7 +33,7 @@ func SignUpHandler(w http.ResponseWriter, req *http.Request) {
 			json.NewEncoder(w).Encode(resState)
 			return
 		}
-		//ユーザーIDを追加された行数番号で登録している
+		//ユーザIDを取得
 		id,_ := result.LastInsertId()
 		_, _ = database.DB.Exec("INSERT INTO users (user_id VALUES (?)", id)
 		resState.ResState = "success"
