@@ -5,7 +5,7 @@ import (
 )
 
 func ResFail(m model.ResInfo){
-	m.ResState = "fail"
+	m.ResState = "failed"
 	m.UserID = 0
 	return
 }
