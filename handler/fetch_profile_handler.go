@@ -14,8 +14,6 @@ func FetchProfileHandler(w http.ResponseWriter, req *http.Request) {
 	var userRecord model.User
 	var reqUserData model.User
 	if err := json.NewDecoder(req.Body).Decode(&reqUserData); err != nil {
-		fmt.Println(err)
-		http.Error(w, "fail to decode json\n", http.StatusBadRequest)
 		ResFail(resState)
 		json.NewEncoder(w).Encode(resState)
 		return
@@ -29,11 +27,10 @@ func FetchProfileHandler(w http.ResponseWriter, req *http.Request) {
 			for rows.Next() {
 				err := rows.Scan(&userRecord.UserID,&userRecord.UserName,&userRecord.Email,&userRecord.Password)
 				if err != nil{
-					fmt.Println("エラーです")
+					ResFail(resState)
+					json.NewEncoder(w).Encode(resState)
 				}
 			userRecord.UserName,userRecord.Email,userRecord.Password = reqUserData.UserName,reqUserData.Email,reqUserData.Password
-			fmt.Println(userRecord)
-			fmt.Println(userRecord)
 			resState.ResState = "success"
 			resState.UserID = userRecord.UserID
 			json.NewEncoder(w).Encode(resState)
