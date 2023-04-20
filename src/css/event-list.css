@@ -13,7 +13,7 @@ body {
 
 .header-ul {
   display: flex;
-  margin-left: 75%;
+  margin-left: 65%;
 }
 
 .header-item {
@@ -174,5 +174,3 @@ body {
   background-color: #ABB5EB;
   border-color: #ABB5EB;
 }
-
-
