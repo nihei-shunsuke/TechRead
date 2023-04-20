@@ -24,7 +24,7 @@
 |  /create-event | CreateEventHandler |  POST  |イベント作成機能 |
 |  /edit-event | EditEventHandler |  POST  |イベント編集機能|
 |  /event-list  | EventListHandler |  GET  |イベント一覧取得|
-|  /event-detail | EventDetailHandler |  GET  |イベント詳細|
+|  /chapter-list | ChapterHandler |  GET  |議事録一覧|
 |  /create-chapter | CreateChapterHandler |  POST  |議事録作成|
 |  /edit-chapter | EditChapterHandler |  POST  |議事録編集|
 

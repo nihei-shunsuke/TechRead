@@ -32,7 +32,7 @@ func main() {
 	r.HandleFunc("/create-event", handler.CreateEventHandler).Methods(http.MethodPost)
 	r.HandleFunc("/edit-event", handler.EditEventHandler).Methods(http.MethodPost)
 	r.HandleFunc("/event-list", handler.EventListHandler).Methods(http.MethodGet)
-	r.HandleFunc("/event-detail", handler.EventDetailHandler).Methods(http.MethodGet)
+	r.HandleFunc("/chapter-list", handler.ChapterListHandler).Methods(http.MethodGet)
 	r.HandleFunc("/create-chapter", handler.CreateChapterHandler).Methods(http.MethodPost)
 	r.HandleFunc("/edit-chapter", handler.EditChapterHandler).Methods(http.MethodPost)
 	handler := c.Handler(r)
