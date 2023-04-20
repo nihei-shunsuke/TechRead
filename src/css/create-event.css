@@ -33,6 +33,26 @@ li {
     margin-top: 7px;
 }
 
+.header-ul {
+    display: flex;
+    margin-left: 65%;
+}
+
+.header-item {
+    list-style:none;
+    margin: 15px;
+    margin-top: 15px;
+}
+
+.header-item a:hover {
+    color: #ABB5EB;
+}
+
+.header-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
   /* 全ての親 */
 .text {
     margin: 0 auto;  /* 中央寄せ */
@@ -98,10 +118,6 @@ button {
     font-size: 20px; 
 }
 
-.css {
-    background-color: aqua;
-}
-
 .member-add {
     margin-left: 45px;
 }
@@ -110,4 +126,14 @@ button {
     margin-top: 5px;
     margin-left: 110px;
     margin-bottom: 20px;
+}
+
+button {
+    cursor: pointer;
+    cursor: hand;
+}
+
+button:hover {
+    background-color: #ABB5EB;
+    border-color: #ABB5EB;
 }

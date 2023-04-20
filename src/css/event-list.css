@@ -11,8 +11,24 @@ body {
   font-family: 'Zen Maru Gothic', sans-serif;
 }
 
-li {
-  list-style:none
+.header-ul {
+  display: flex;
+  margin-left: 65%;
+}
+
+.header-item {
+  list-style:none;
+  margin: 15px;
+  margin-top: 15px;
+}
+
+.header-item a:hover {
+  color: #ABB5EB;
+}
+
+.header-item a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .header {
@@ -68,9 +84,19 @@ li {
   font-size: 20px;
 }
 
+.input-book-name {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.input-book-name p:hover {
+  color: #ABB5EB;
+  border: #303C5E;
+  text-decoration: underline; 
+}
+
 .dropdown {
   position: relative;
-  
 }
 
 .dropdown__btn {
@@ -79,6 +105,8 @@ li {
   background: none;
   border: 0;
   margin: 23px auto;
+  cursor: pointer;
+  cursor: hand;
 }
 
 .dropdown__btn.is-open::after {
@@ -123,4 +151,26 @@ li {
 
 .dropdown__item-link:hover {
   background: #fbfbfb;
+}
+
+.add {
+  text-align: center;
+  margin: 30px;
+}
+
+.add-event {
+  width: 160px;
+  height: 50px;
+  font-size: 15px;
+  background-color: #303C5E;
+  color: #fff;
+  border-radius: 30px;
+  border-color: #303C5E;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.add-event:hover {
+  background-color: #ABB5EB;
+  border-color: #ABB5EB;
 }
