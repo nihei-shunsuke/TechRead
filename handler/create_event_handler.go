@@ -9,14 +9,14 @@ import (
 	"TechRead/database"
 )
 
-type ReqEvent struct {
+type reqEvent struct {
 	EventName  string
 	BookName	string
 	MemberList	[]string  `db:"memberlist" form:"memberlist" json:"memberlist"`
 }
 
 func CreateEventHandler(w http.ResponseWriter, req *http.Request) {
-	var reqEventData ReqEvent
+	var reqEventData reqEvent
 	var resState model.ResInfo
 	var userRecord model.User
 	if err := json.NewDecoder(req.Body).Decode(&reqEventData); err != nil {
