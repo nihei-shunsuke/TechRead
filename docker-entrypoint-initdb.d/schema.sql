@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS chapters (
   chapter_num     INTEGER UNSIGNED NOT NULL,
   venue           VARCHAR(100) NOT NULL,
   event_id        INTEGER UNSIGNED NOT NULL,
-  event_date      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  event_date      DATE NOT NULL DEFAULT (CURRENT_DATE),
   content         TEXT     NOT NULL DEFAULT '',
   last_updater_id INTEGER UNSIGNED NOT NULL,
   created_at      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
