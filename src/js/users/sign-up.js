@@ -28,7 +28,7 @@ const postSignUp = async () => {
 
   if (res.res_state == 'success') {
     Cookies.set('user_id',res.user_id);
-    // window.location.href = '../html/event-list.html';
+    window.location.href = '../html/event-list.html';
   }else{
     alert('メールアドレスが重複しています');
   };
