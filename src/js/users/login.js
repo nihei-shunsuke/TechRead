@@ -24,6 +24,9 @@ const postLogin = async () => {
   console.log(res);
 
   if (res.res_state == 'success') {
+    Cookies.set('user_id',res.user_id);
     window.location.href = '../html/event-list.html';
+  } else {
+    alert('パスワードもしくはメールアドレスが間違っています');
   };
 }
