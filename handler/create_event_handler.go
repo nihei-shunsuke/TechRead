@@ -19,6 +19,7 @@ func CreateEventHandler(w http.ResponseWriter, req *http.Request) {
 	var reqEventData reqEvent
 	var resState model.ResInfo
 	var userRecord model.User
+	var userRead model.User
 	if err := json.NewDecoder(req.Body).Decode(&reqEventData); err != nil {
 		fmt.Println("a")
 		ResFail(resState)
@@ -26,7 +27,7 @@ func CreateEventHandler(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	const sqlStr = `
-		insert into events (event_name, book_name, organaized_id) values
+		insert into events (event_name, book_name, organizer_id) values
 		(?,?,?);
 	`
 	const sqlStrMember = `
@@ -37,22 +38,21 @@ func CreateEventHandler(w http.ResponseWriter, req *http.Request) {
 	if cookies != nil{
 		for _, c := range cookies {
 			ID,_ := strconv.ParseInt(c.Value, 10, 64)
-			fmt.Println(ID)
 			_ = database.DB.QueryRow("SELECT user_id FROM users WHERE user_id = ?", ID).Scan(&userRecord.UserID)
 		}
-		result, _ := database.DB.Exec(sqlStr, reqEventData.EventName, reqEventData.BookName,userRecord.UserID)
-		//if err != nil {
-		//	fmt.Println(err)
-		//	ResFail(resState)
-		//	json.NewEncoder(w).Encode(resState)
-		//	return
-		//}
+		result, err := database.DB.Exec(sqlStr, reqEventData.EventName, reqEventData.BookName,userRecord.UserID)
+		if err != nil {
+			ResFail(resState)
+			json.NewEncoder(w).Encode(resState)
+			return
+		}
 		id,_ := result.LastInsertId()
 		for i := 0; i < len(reqEventData.MemberList); i++{
-			_ = database.DB.QueryRow("SELECT user_id FROM users WHERE user_name = ?", reqEventData.MemberList[i]).Scan(&userRecord.UserID)
-			_, err := database.DB.Exec(sqlStrMember, userRecord.UserID, id)
+			_ = database.DB.QueryRow("SELECT user_id FROM users WHERE user_name = ?", reqEventData.MemberList[i]).Scan(&userRead.UserID)
+			fmt.Println(userRead.UserID)
+			_, err := database.DB.Exec(sqlStrMember, userRead.UserID, id)
 			if err != nil{
-				fmt.Println("c")
+				fmt.Println(err)
 				ResFail(resState)
 				json.NewEncoder(w).Encode(resState)
 				return
@@ -61,8 +61,8 @@ func CreateEventHandler(w http.ResponseWriter, req *http.Request) {
 		resState.ResState = "success"
 		resState.UserID = id//ユーザーIDと書いてあるがイベントID
 		json.NewEncoder(w).Encode(resState)
+		return
 	}
 	ResFail(resState)
-	fmt.Println("d")
 	json.NewEncoder(w).Encode(resState)
 }
