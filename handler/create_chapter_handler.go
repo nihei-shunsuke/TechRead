@@ -29,7 +29,7 @@ func CreateChapterHandler(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	// TODO: フロントエンド側でcookieを入れる処理ができたら、cookieの値を読み取る処理に変更する
+	// Cookieからuser_idを取得
 	user_id, err := req.Cookie("user_id")
 	if err != nil {
 		fmt.Println(err)
