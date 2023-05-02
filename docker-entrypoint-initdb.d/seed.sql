@@ -1,3 +1,6 @@
+CREATE DATABASE techread;
+USE techread;
+
 INSERT INTO users (
   user_name, email, password, created_at, updated_at
 ) VALUES (
@@ -13,7 +16,7 @@ INSERT INTO events (
 INSERT INTO chapters (
   chapter_num, venue, event_id, event_date, content, last_updater_id, created_at, updated_at
 ) VALUES (
-  1, 'オンライン', 1, now(), '理解しやすいコード', 1, now(), now()
+  1, 'オンライン', 1, date(now()), '理解しやすいコード', 1, now(), now()
 );
 
 INSERT INTO comments (
