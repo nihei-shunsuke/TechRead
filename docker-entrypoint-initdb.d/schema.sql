@@ -1,3 +1,7 @@
+DROP DATABASE techread;
+CREATE DATABASE techread;
+USE techread;
+
 CREATE TABLE IF NOT EXISTS users (
   user_id       INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   user_name     VARCHAR(40)     NOT NULL,
