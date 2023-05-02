@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html>
   <head>
@@ -40,3 +41,47 @@
     <script src="../js/event/create-event.js"></script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="../images/logo.png">
+      <meta charset="utf-8">
+      <title>TechRead</title>
+      <link rel="stylesheet" href="../css/create-event.css">
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navigation">
+        <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+        <h1>TechRead</h1>
+        <ul class="header-ul">
+          <li class="header-item"><a href="../html/event-list.html">イベント一覧</a></li>
+          <li class="header-item"><a href="../html/toppage.html">ログアウト</a></li>
+        </ul>
+      </nav>
+    </header> 
+
+    <div class="text">
+      <h1>イベント編集</h1>
+      <form id="create-event-form" class="form">
+        <label for="event">イベント名</label>
+        <input type="text" id="event_name" class="event"><br>
+
+        <label for="title">書籍名</label>
+        <input type="text" id="book_name" class="title"><br>
+
+        <div id="add-member" class="member-add">
+          <label for="member">メンバー</label>
+          <input type="text" id="member">
+          <button type="button" id="add-member-button" class="add">+</button>
+        </div>
+
+        <button type="button" id="create-btn" class="create" onclick="location.href='../html/event-list.html'">完了</button>
+      </form>
+    </div>
+    <script src="../js/event/create-event.js"></script>
+  </body>
+</html>
+>>>>>>> Stashed changes

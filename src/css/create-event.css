@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 @import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
 
 * {
@@ -111,3 +112,144 @@ button {
     margin-left: 110px;
     margin-bottom: 20px;
 }
+=======
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
+
+* {
+    margin: 0px; 
+    padding: 0px;
+    }
+
+body {
+    background-color: #fff;
+    font-family: 'Hachi Maru Pop', cursive;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+li {
+    list-style:none
+}
+
+.header {
+    background-color: #303C5E;
+    color: #fff;
+    font-size: 20px;
+    height: 62px;
+    margin-bottom: 45px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .3);
+}
+
+.navigation {
+    display: flex;
+}
+
+.header h1 {
+    margin-left: 20px;
+    margin-top: 7px;
+}
+
+.header-ul {
+    display: flex;
+    margin-left: 65%;
+}
+
+.header-item {
+    list-style:none;
+    margin: 15px;
+    margin-top: 15px;
+}
+
+.header-item a:hover {
+    color: #ABB5EB;
+}
+
+.header-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+  /* 全ての親 */
+.text {
+    margin: 0 auto;  /* 中央寄せ */
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .5);
+    width: 80%;
+    font-size: 20px;
+
+    text-align: center;
+
+}
+
+.text h1 {
+    color: #303C5E;
+    font-size: 30px;
+    display: block;
+
+    margin: 20px 0 10px 0;
+    padding-top: 30px;
+}
+
+  /* フォームの親要素 */
+form {
+    width: 90%;
+
+    margin: 0 auto;
+
+}
+
+form label {
+    font-size: 23px;
+    margin: 10px 0 10px 0;
+
+    display: inline-block;
+
+    width: 150px;
+}
+
+form input {
+    height: 20px;
+    width: 350px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+  /* ボタンに対して */
+button {
+    background: #303C5E;
+    border: none;
+    color: #fff;
+    height: 40px;
+    width: 20%;
+    font-size: 20px;
+
+    margin: 10px 0 30px 0;
+}  
+
+
+.add {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    margin-right: 10px;
+    font-size: 20px; 
+}
+
+.member-add {
+    margin-left: 45px;
+}
+
+.member {
+    margin-top: 5px;
+    margin-left: 110px;
+    margin-bottom: 20px;
+}
+
+button {
+    cursor: pointer;
+    cursor: hand;
+}
+
+button:hover {
+    background-color: #ABB5EB;
+    border-color: #ABB5EB;
+}
+>>>>>>> Stashed changes

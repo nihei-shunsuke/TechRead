@@ -5,7 +5,14 @@ import (
 )
 
 func ResFail(m model.ResInfo){
-	m.ResState = "fail"
+	m.ResState = "failed"
 	m.UserID = 0
 	return
 }
+
+func ResFailEvent(m model.ResCreateEvent){
+	m.ResState = "failed"
+	m.EventID = 0
+	return
+}
+
