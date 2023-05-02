@@ -30,7 +30,16 @@ func CreateChapterHandler(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// TODO: フロントエンド側でcookieを入れる処理ができたら、cookieの値を読み取る処理に変更する
-	user_id := 1
+	user_id, err := req.Cookie("user_id")
+	if err != nil {
+		fmt.Println(err)
+
+		var resState model.ResInfo
+		ResFail(resState)
+		json.NewEncoder(w).Encode(resState)
+		return
+	}
+	fmt.Println(user_id)
 
 	// クエリ文を定義
 	const sqlStr = `
