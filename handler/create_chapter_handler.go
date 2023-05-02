@@ -1,15 +1,3 @@
-<<<<<<< Updated upstream
-package handler
-
-import (
-	"io"
-	"net/http"
-)
-
-func CreateChapterHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "CreateChapterHandler\n")
-}
-=======
 package handler
 
 import (
@@ -71,4 +59,3 @@ func CreateChapterHandler(w http.ResponseWriter, req *http.Request) {
 	resSuccess.ChapterID = chapterId
 	json.NewEncoder(w).Encode(resSuccess)
 }
->>>>>>> Stashed changes
