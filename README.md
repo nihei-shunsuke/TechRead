@@ -20,8 +20,7 @@
 - `docker exec -it db-for-techread bash`
 - `mysql -u ユーザー名 -p`
 
-
-
+## API設計
 |  エンドポイント  |ハンドラ|  メソッド  | 説明 |
 | ---- | ---- |---- | ---- |
 |  /login | LoginHandler |  POST  |ログイン機能|
@@ -38,7 +37,6 @@
 ### Cookieについて
 - user_id: ログインしてるユーザID
 /login, /sign-upのレスポンスで来たuser_idをフロントエンド側でCookieに入れて、リクエストの度に送る。
-
 
 ## /login
 ### Request(POST)
