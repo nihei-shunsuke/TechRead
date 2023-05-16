@@ -4,15 +4,22 @@
 - gorilla: Routing, Middleware,Session
 
 ## 起動方法
-### 初回 or Dockerfileに変更があった場合
+### フロントエンド側
+- Cookieに関わる処理が必要な場合、localhostを立ち上げる。Cookieを扱うには、サーバを立てないとできないらしい。
+- 方法はなんでもいいが、手軽なのはVSCodeの[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)という拡張機能。
+- ステータスバーのGo Liveボタンを押すと勝手にlocalhostが立ち上がります。
+
+### サーバーサイド側
+#### 初回 or Dockerfileに変更があった場合
 - `docker-compose up --build`
-### 2回目以降
+#### 2回目以降
 - `docker-compose up`
-### DBの初期化をするときは
+#### DBの初期化をするときは
 - `docker-compose down --volume`
-### DockerのDBにアクセスするときは
+#### DockerのDBにアクセスするときは
 - `docker exec -it db-for-techread bash`
 - `mysql -u ユーザー名 -p`
+
 
 
 |  エンドポイント  |ハンドラ|  メソッド  | 説明 |
