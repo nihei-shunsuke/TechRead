@@ -5,14 +5,27 @@
 
 ## 起動方法
 ### 初回 or Dockerfileに変更があった場合
-- `docker-compose up --build`
+- Dockerのイメージを作成、コンテナを立ち上げる
+`docker-compose up --build`
+- DBのテーブルを作成
+`docker compose exec db mysql -u {USERNAME} -p < docker-entrypoint-initdb.d/schema.sql`
+- DBにデモデータを入れる
+`docker compose exec db mysql -u {USERNAME} -p < docker-entrypoint-initdb.d/seed.sql`
+
 ### 2回目以降
-- `docker-compose up`
+- `docker compose up`
 ### DBの初期化をするときは
-- `docker-compose down --volume`
+`docker compose down -v`
+
+もしくは
+
+```
+docker compose exec db mysql -u {USERNAME} -p{USERPASS}
+drop database techread;
+```
 ### DockerのDBにアクセスするときは
-- `docker exec -it db-for-techread bash`
-- `mysql -u ユーザー名 -p`
+- `docker exec -it db bash`
+- `mysql -u {USERNAME} {USERPASS}`
 
 
 |  エンドポイント  |ハンドラ|  メソッド  | 説明 |
@@ -188,32 +201,37 @@
 | JSON Key | 型 | サイズ | 必須 | 値の説明 |
 |:-----------|:-----------|:-----------|:-----------|:-----------|
 | res_state | string | 10 | ○ | ステータス |
-| event_date | date | 40 | ○ | 開催日 |
-| venue | string | 254 | ○ | 開催場所 |
+| event_id | int | 10 | ○ | イベントID |
+| event_name | string | 255 | ○ | イベント名 |
+| chapters | struct |  | ○ | 議事録一覧 |
+| venue | string | 255 | ○ | 開催場所 |
 | chapter_num | int | 20 | ○ | 章 |
 | content | int | 20 | ○ | 内容 |
+
 レスポンス例
 ```
 {
   "res_state": "success",
   "event_id": 1,
   "event_name": "リーダブルコード輪読会",
-  "chapters": [
-    {
-      "chapter_id": 1,
-      "event_date": "2022-11-02",
-      "venue": "オンライン",
-      "chapter_num": 1,
-      "content": "綺麗に書くことの重要性が書かれた章。~~~~~~~aaaaaaaaa",
-    },
-    {
-      "chapter_id": 2,
-      "event_date": "2022-11-03",
-      "venue": "スマプロのルーム",
-      "chapter_num": 2,
-      "content": "1行ごとの改善が大事ということを書いた章。~~~~~aaaaaaaa",
-    },
-  ]
+  "chapters": {
+    "chapters": [
+      {
+        "chapter_id": 1,
+        "event_date": "2022-11-02",
+        "venue": "オンライン",
+        "chapter_num": 1,
+        "content": "綺麗に書くことの重要性が書かれた章。~~~~~~~aaaaaaaaa",
+      },
+      {
+        "chapter_id": 2,
+        "event_date": "2022-11-03",
+        "venue": "スマプロのルーム",
+        "chapter_num": 2,
+        "content": "1行ごとの改善が大事ということを書いた章。~~~~~aaaaaaaa",
+      },
+    ]
+  },
 }
 ```
 
