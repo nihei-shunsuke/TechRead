@@ -4,30 +4,29 @@
 - gorilla: Routing, Middleware,Session
 
 ## 起動方法
+### フロントエンド側
+- Cookieに関わる処理が必要な場合、localhostを立ち上げる。Cookieを扱うには、サーバを立てないとできないらしい。
+- 方法はなんでもいいが、手軽なのはVSCodeの[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)という拡張機能。
+- ステータスバーのGo Liveボタンを押すと勝手にlocalhostが立ち上がります。
+
+### サーバーサイド側
 ### 初回 or Dockerfileに変更があった場合
 - Dockerのイメージを作成、コンテナを立ち上げる
-`docker-compose up --build`
+`docker compose up --build`
 - DBのテーブルを作成
 `docker compose exec db mysql -u {USERNAME} -p < docker-entrypoint-initdb.d/schema.sql`
 - DBにデモデータを入れる
 `docker compose exec db mysql -u {USERNAME} -p < docker-entrypoint-initdb.d/seed.sql`
 
-### 2回目以降
+#### 2回目以降
 - `docker compose up`
-### DBの初期化をするときは
+#### DBの初期化をするときは
 `docker compose down -v`
-
-もしくは
-
-```
-docker compose exec db mysql -u {USERNAME} -p{USERPASS}
-drop database techread;
-```
-### DockerのDBにアクセスするときは
+#### DockerのDBにアクセスするときは
 - `docker exec -it db bash`
-- `mysql -u {USERNAME} {USERPASS}`
+- `mysql -u {USERNAME} -p{USERPASS}`
 
-
+## API設計
 |  エンドポイント  |ハンドラ|  メソッド  | 説明 |
 | ---- | ---- |---- | ---- |
 |  /login | LoginHandler |  POST  |ログイン機能|
@@ -44,7 +43,6 @@ drop database techread;
 ### Cookieについて
 - user_id: ログインしてるユーザID
 /login, /sign-upのレスポンスで来たuser_idをフロントエンド側でCookieに入れて、リクエストの度に送る。
-
 
 ## /login
 ### Request(POST)
