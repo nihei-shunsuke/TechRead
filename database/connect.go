@@ -22,10 +22,10 @@ func Connect() {
 	port := "3306"
 	database_name := os.Getenv("MYSQL_DATABASE")
 
-	dbconf := user + ":" + password + "@tcp(" + host + ":" + port + ")/" + database_name + "?charset=utf8mb4"
+	dbconf := user + ":" + password + "@tcp(" + host + ":" + port + ")/" + database_name + "?parseTime=true"
 
 	DB, err = sql.Open("mysql", dbconf)
-	
+
 	if err != nil {
 		fmt.Println(err.Error())
 	}
