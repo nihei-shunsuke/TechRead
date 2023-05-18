@@ -37,16 +37,16 @@ func CreateEventHandler(w http.ResponseWriter, req *http.Request) {
 	cookies := req.Cookies()
 	if cookies != nil{
 		for _, c := range cookies {
-			ID,_ := strconv.ParseInt(c.Value, 10, 64)
+			ID, _ := strconv.ParseInt(c.Value, 10, 64)
 			_ = database.DB.QueryRow("SELECT user_id FROM users WHERE user_id = ?", ID).Scan(&userRecord.UserID)
 		}
-		result, err := database.DB.Exec(sqlStr, reqEventData.EventName, reqEventData.BookName,userRecord.UserID)
+		result, err := database.DB.Exec(sqlStr, reqEventData.EventName, reqEventData.BookName, userRecord.UserID)
 		if err != nil {
 			ResFailEvent(resState)
 			json.NewEncoder(w).Encode(resState)
 			return
 		}
-		id,_ := result.LastInsertId()
+		id, _ := result.LastInsertId()
 		for i := 0; i < len(reqEventData.MemberList); i++{
 			_ = database.DB.QueryRow("SELECT user_id FROM users WHERE user_name = ?", reqEventData.MemberList[i]).Scan(&userRead.UserID)
 			fmt.Println(userRead.UserID)
