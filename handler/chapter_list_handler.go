@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"time"
 	"log"
+	"strconv"
 )
 
 type ReqChapterList struct {
@@ -33,9 +34,9 @@ type ChapterList struct {
 }
 
 func ChapterListHandler(w http.ResponseWriter, req *http.Request) {
-	// リクエストを構造体に入れる
-	var reqChapterList ReqChapterList
-	if err := json.NewDecoder(req.Body).Decode(&reqChapterList); err != nil {
+	// クエリパラメータの値を変数に入れる
+	eventID, err := strconv.Atoi(req.URL.Query().Get("event_id"))
+	if err != nil {
 		log.SetFlags(log.Lshortfile)
 		log.Println(err)
 
@@ -46,7 +47,7 @@ func ChapterListHandler(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// Chaptersを取得
-	chapters, err := getChapterList(reqChapterList)
+	chapters, err := getChapterList(eventID)
 	if err != nil {
 		log.SetFlags(log.Lshortfile)
 		log.Println(err)
@@ -61,7 +62,7 @@ func ChapterListHandler(w http.ResponseWriter, req *http.Request) {
 
 	// event関連のデータを取得
 	const sqlEventStr = `SELECT event_id, event_name FROM events WHERE event_id = ?;`
-	err = database.DB.QueryRow(sqlEventStr, reqChapterList.EventID).Scan(&resChapterList.EventID, &resChapterList.EventName)
+	err = database.DB.QueryRow(sqlEventStr, eventID).Scan(&resChapterList.EventID, &resChapterList.EventName)
 	if err != nil {
 		log.SetFlags(log.Lshortfile)
 		log.Println(err)
@@ -78,12 +79,12 @@ func ChapterListHandler(w http.ResponseWriter, req *http.Request) {
 }
 
 // ChapterListを取得
-func getChapterList(req ReqChapterList) (Chapters, error) {
+func getChapterList(eventID int) (Chapters, error) {
 	// クエリ文を定義
 	const sqlStr = `SELECT chapter_id, event_date, venue, chapter_num, content FROM chapters WHERE event_id = ?;`
 
 	// dbから取得
-	rows, err := database.DB.Query(sqlStr, req.EventID)
+	rows, err := database.DB.Query(sqlStr, eventID)
 	if err != nil {
 		log.SetFlags(log.Lshortfile)
 		log.Println(err)
