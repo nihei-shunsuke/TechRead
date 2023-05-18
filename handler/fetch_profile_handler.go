@@ -19,18 +19,18 @@ func FetchProfileHandler(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	cookies := req.Cookies()
-	if cookies != nil{
+	if cookies != nil {
 		for _, c := range cookies {
-			ID,_ := strconv.ParseInt(c.Value, 10, 64)
-			fmt.Println(ID)
-			rows,_ := database.DB.Query("SELECT user_id ,user_name,email, password FROM users WHERE user_id = ?", ID)
+			id, _ := strconv.ParseInt(c.Value, 10, 64)
+			fmt.Println(id)
+			rows, _ := database.DB.Query("SELECT user_id, user_name,email, password FROM users WHERE user_id = ?", ID)
 			for rows.Next() {
-				err := rows.Scan(&userRecord.UserID,&userRecord.UserName,&userRecord.Email,&userRecord.Password)
+				err := rows.Scan(&userRecord.UserID, &userRecord.UserName, &userRecord.Email, &userRecord.Password)
 				if err != nil{
 					ResFail(resState)
 					json.NewEncoder(w).Encode(resState)
 				}
-			userRecord.UserName,userRecord.Email,userRecord.Password = reqUserData.UserName,reqUserData.Email,reqUserData.Password
+			userRecord.UserName, userRecord.Email, userRecord.Password = reqUserData.UserName, reqUserData.Email, reqUserData.Password
 			resState.ResState = "success"
 			resState.UserID = userRecord.UserID
 			json.NewEncoder(w).Encode(resState)
