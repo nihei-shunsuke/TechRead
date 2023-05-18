@@ -1,24 +1,24 @@
 
 
-function create_chapter() {
+const create_chapter = async () => {
   // 入力値を取り出す
-  const date = document.getElementById("date").value;
-  const place = document.getElementById("place").value;
-  const chapter = document.getElementById("chapter").value;
-  const event_id = 1; // クエリにevent-idを入れておく。それを格納する
-  const word = document.getElementById("word").value;
-  const last_updater_id = 1; // Cookieから取り出す
+  const dateString = await document.getElementById("date").value;
+  const place = await document.getElementById("place").value;
+  const chapterStr = await document.getElementById("chapter").value;
+  const event_id = await 1; // クエリにevent-idを入れておく。それを格納する
+  const word = await document.getElementById("word").value;
 
   // 入力値を出力
+  const date = await new Date(dateString);
+  const chapter = await Number(chapterStr);
   console.log(date);
   console.log(place);
   console.log(chapter);
   console.log(word);
 
   // 入力をリクエスト
-  const parameter = {
+  const parameter = await {
     method: 'POST',
-    mode: 'no-cors',
     headers: {
       'Content-Type':'application/json'
     },
@@ -27,10 +27,10 @@ function create_chapter() {
       venue: place,
       event_id: event_id,
       content: word,
-      last_updater_id: last_updater_id,
       event_date: date,
     })
   };
+
   const url = 'http://localhost:8080/create-chapter';
 
   fetch(url, parameter).then((response) => {
@@ -38,9 +38,15 @@ function create_chapter() {
   })
   .catch(err => {
     console.err(err);
-  })
+  });
 
-  location.href='../html/chapter-list.html';
+  const response = await fetch("http://localhost:8080/create-chapter", parameter);
+  const res = await response.json();
+  console.log(res);
+
+  if(res.res_state == 'success'){
+    location.href='../html/chapter-list.html';
+  };
 };
 
 const create_chapter_btn = document.getElementById('create-chapter-btn');
