@@ -37,7 +37,7 @@ func ChapterListHandler(w http.ResponseWriter, req *http.Request) {
 	var reqChapterList ReqChapterList
 	if err := json.NewDecoder(req.Body).Decode(&reqChapterList); err != nil {
 		log.SetFlags(log.Lshortfile)
-    log.Println(err)
+		log.Println(err)
 
 		var resState model.ResInfo
 		ResFail(resState)
@@ -49,7 +49,7 @@ func ChapterListHandler(w http.ResponseWriter, req *http.Request) {
 	chapters, err := getChapterList(reqChapterList)
 	if err != nil {
 		log.SetFlags(log.Lshortfile)
-    log.Println(err)
+		log.Println(err)
 
 		var resState model.ResInfo
 		ResFail(resState)
@@ -64,7 +64,7 @@ func ChapterListHandler(w http.ResponseWriter, req *http.Request) {
 	err = database.DB.QueryRow(sqlEventStr, reqChapterList.EventID).Scan(&resChapterList.EventID, &resChapterList.EventName)
 	if err != nil {
 		log.SetFlags(log.Lshortfile)
-    log.Println(err)
+		log.Println(err)
 
 		var resState model.ResInfo
 		ResFail(resState)
@@ -86,7 +86,7 @@ func getChapterList(req ReqChapterList) (Chapters, error) {
 	rows, err := database.DB.Query(sqlStr, req.EventID)
 	if err != nil {
 		log.SetFlags(log.Lshortfile)
-    log.Println(err)
+		log.Println(err)
 		return Chapters{}, err
 	}
 	defer rows.Close()
