@@ -107,7 +107,7 @@ func getChapterList(req ReqChapterList) (Chapters, error) {
 	err = rows.Err()
 	if err != nil {
 		log.SetFlags(log.Lshortfile)
-    log.Println(err)
+		log.Println(err)
 		return Chapters{}, err
 	}
 
