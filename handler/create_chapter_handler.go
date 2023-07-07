@@ -12,7 +12,6 @@ import (
 func CreateChapterHandler(w http.ResponseWriter, req *http.Request) {
 	var reqChapterData model.Chapter
 	var resState model.ResInfo
-	var userRecord model.User
 	if err := json.NewDecoder(req.Body).Decode(&reqChapterData); err != nil {
 		fmt.Println(err)
 		http.Error(w, "fail to decode json\n", http.StatusBadRequest)
@@ -25,8 +24,9 @@ func CreateChapterHandler(w http.ResponseWriter, req *http.Request) {
 		insert into chapters (venue,event_id,content) values
 		(?,?,?);
 	`
+	var userRecord model.User
 	cookies := req.Cookies()
-	if cookies != nil{
+	if cookies != nil {
 		for _, c := range cookies {
 			ID,_ := strconv.ParseInt(c.Value, 10, 64)
 			fmt.Println(ID)
