@@ -11,7 +11,6 @@ import (
 
 func FetchProfileHandler(w http.ResponseWriter, req *http.Request) {
 	var resState model.ResInfo
-	var userRecord model.User
 	var reqUserData model.User
 	if err := json.NewDecoder(req.Body).Decode(&reqUserData); err != nil {
 		ResFail(resState)
@@ -21,12 +20,13 @@ func FetchProfileHandler(w http.ResponseWriter, req *http.Request) {
 	cookies := req.Cookies()
 	if cookies != nil {
 		for _, c := range cookies {
+			var userRecord model.User
 			id, _ := strconv.ParseInt(c.Value, 10, 64)
 			fmt.Println(id)
 			rows, _ := database.DB.Query("SELECT user_id, user_name,email, password FROM users WHERE user_id = ?", ID)
 			for rows.Next() {
 				err := rows.Scan(&userRecord.UserID, &userRecord.UserName, &userRecord.Email, &userRecord.Password)
-				if err != nil{
+				if err != nil {
 					ResFail(resState)
 					json.NewEncoder(w).Encode(resState)
 				}
