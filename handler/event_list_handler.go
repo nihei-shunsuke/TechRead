@@ -23,9 +23,8 @@ type eventdetail struct {
 
 func EventListHandler(w http.ResponseWriter, req *http.Request) {
 	var userRecord model.User
-	var resEvent ResEventlist
 	cookies := req.Cookies()
-	if cookies != nil{
+	if cookies != nil {
 		for _, c := range cookies {
 			id, _ := strconv.ParseInt(c.Value, 10, 64)
 			fmt.Println(id)
@@ -52,6 +51,7 @@ func EventListHandler(w http.ResponseWriter, req *http.Request) {
 		eventNumArray = append(eventNumArray, num)
 	}
 	fmt.Println("c")
+	var resEvent ResEventlist
 	for i := 0; i < len(eventNumArray); i++ {
 		err := database.DB.QueryRow("SELECT book_name FROM events WHERE event_id = ?", eventNumArray[i]).Scan(&resEvent.event[i].BookName)
 		if err != nil {
