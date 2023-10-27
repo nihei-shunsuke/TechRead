@@ -1,10 +1,44 @@
 package handler
 
 import (
-	"io"
 	"net/http"
+	"encoding/json"
+	"TechRead/model"
+	"fmt"
+	"strconv"
+	"TechRead/database"
 )
 
 func FetchProfileHandler(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "FetchProfileHandler\n")
+	var resState model.ResInfo
+	var reqUserData model.User
+	if err := json.NewDecoder(req.Body).Decode(&reqUserData); err != nil {
+		ResFail(resState)
+		json.NewEncoder(w).Encode(resState)
+		return
+	}
+	cookies := req.Cookies()
+	if cookies != nil {
+		for _, c := range cookies {
+			var userRecord model.User
+			id, _ := strconv.ParseInt(c.Value, 10, 64)
+			fmt.Println(id)
+			rows, _ := database.DB.Query("SELECT user_id, user_name,email, password FROM users WHERE user_id = ?", ID)
+			for rows.Next() {
+				err := rows.Scan(&userRecord.UserID, &userRecord.UserName, &userRecord.Email, &userRecord.Password)
+				if err != nil {
+					ResFail(resState)
+					json.NewEncoder(w).Encode(resState)
+				}
+			userRecord.UserName, userRecord.Email, userRecord.Password = reqUserData.UserName, reqUserData.Email, reqUserData.Password
+			resState.ResState = "success"
+			resState.UserID = userRecord.UserID
+			json.NewEncoder(w).Encode(resState)
+			return
+		}
+	}
+	ResFail(resState)
+	json.NewEncoder(w).Encode(resState)
+	}
 }
+
